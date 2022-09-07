@@ -1,0 +1,21 @@
+<div>
+    <h1>Ejemplo directiva estructural</h1>
+    <p>Se trata de uan directiva mas avanzada que un simple ngIf pues tomamos 
+        el control y podemos realizar scripts que se puede ejecutar antes de actualizar la 
+        vista
+    </p>
+
+    <p *appStruct="rol">
+        Ejemplo con basico : Contenido oculto para los que no tiene el rol
+    </p>
+    <!--Ejempl con la direcita-->
+    <ng-template  [appStruct]="rol" #bloqueParaRol>
+        <p>Ehmeplo con ngTemplate</p>
+        <p>COtenido oculto</p>
+    </ng-template>
+    <div>
+        <button (click)="cambiarRol()">
+            {{!rol ? 'MOSTRAR' : 'OCULTAR'}}
+        </button>
+    </div>
+</div>
